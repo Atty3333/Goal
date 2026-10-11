@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvGoalCardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="5dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp"
+    android:animateLayoutChanges="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/goalCheckBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivGoalIcon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/llTextContainer"
+            app:layout_constraintBottom_toBottomOf="@id/llTextContainer" />
+
+        <LinearLayout
+            android:id="@+id/llTextContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivGoalIcon"
+            app:layout_constraintEnd_toStartOf="@id/ivGoalArrow">
+
+            <TextView
+                android:id="@+id/tvGoalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Time with Gigi" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivGoalArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_arrow_next"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/llTextContainer"
+            app:layout_constraintBottom_toBottomOf="@id/llTextContainer" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowMetadata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:flow_wrapMode="none"
+            app:flow_horizontalStyle="packed"
+            app:flow_horizontalGap="6dp"
+            app:flow_verticalGap="4dp"
+            app:flow_horizontalAlign="start"
+            app:constraint_referenced_ids="tvGoalCategoryBadge,tvGoalPriorityBadge,tvBadgeEndDate,tvBadgeTarget,tvBadgeRecurrence,tvBadgeLinked"
+            app:layout_constraintTop_toBottomOf="@id/llTextContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvGoalCategoryBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2E2A3A"
+            android:textColor="#BB86FC"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            tools:ignore="MissingConstraints"
+            tools:text="CODING" />
+
+        <TextView
+            android:id="@+id/tvGoalPriorityBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#332222"
+            android:textColor="#FF6B6B"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            tools:ignore="MissingConstraints"
+            tools:text="HIGH" />
+
+        <TextView
+            android:id="@+id/tvBadgeEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1AFFFFFF"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:text="Jun 15, 2026"/>
+
+        <TextView
+            android:id="@+id/tvBadgeTarget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1AFFFFFF"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:text="100 pages"/>
+
+        <TextView
+            android:id="@+id/tvBadgeRecurrence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1AFFFFFF"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:text="Every Sunday"/>
+
+        <TextView
+            android:id="@+id/tvBadgeLinked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1AFFFFFF"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints"
+            tools:text="LINKED 🎯"/>
+
+        <ProgressBar
+            android:id="@+id/pbGoalTimeline"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"
+            android:progressDrawable="@android:drawable/progress_horizontal"
+            android:progressTint="@color/goal_done_tab_accent"
+            android:progressBackgroundTint="@color/divider_line_color"
+            app:layout_constraintTop_toBottomOf="@id/flowMetadata"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

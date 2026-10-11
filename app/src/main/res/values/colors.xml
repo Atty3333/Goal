@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface_elevated">#1E1E1E</color>
+
+    <color name="goal_in_progress">#1E1E1E</color>
+    <color name="goal_completed">#81C784</color>
+    <color name="goal_done_tab_accent">#BB86FC</color>
+    <color name="text_primary">#121212</color>
+    <color name="text_secondary">#A0A0A0</color>
+    <color name="text_completed_strike">#8E8E93</color>
+    <color name="text_on_completed_card">#121212</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="Primary">#FFFFFF</color>
+    <color name="Secondary">#121212</color>
+    <color name="tiertiry">#BB86FC</color>
+    <color name="four">#F5F5F7</color>
+
+    <color name="input_bg">#757575</color>
+    <color name="Card_bg">#E1BEE7</color>
+
+
+    <color name="search_bar_background">#2C2C2C</color>
+    <color name="search_hint_color">#757575</color>
+    <color name="divider_line_color">#37474F</color>
+
+    <color name="goal_completed_light">#E1BEE7</color>
+
+
+
+    <color name="ic_launcher_background">#121212</color>
+    <color name="ic_launcher_checklist">#BB86FC</color>
+    <color name="ic_launcher_arrow">#A0A0A0</color>
+</resources>

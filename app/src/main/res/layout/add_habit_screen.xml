@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/Primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/ivHabitBackButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="?attr/homeAsUpIndicator"
+                android:contentDescription="Navigate Back"
+                app:tint="@color/tiertiry"
+                android:layout_marginEnd="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/tvHabitScreenTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create A New Habit"
+                android:textColor="@color/tiertiry"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Habit Title"
+            android:textColorHint="@color/tiertiry"
+            android:layout_marginBottom="16dp"
+            app:hintTextColor="#BB86FC"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#BB86FC"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHabitTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tiertiry"
+                android:inputType="textCapSentences"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Category"
+                android:layout_marginEnd="4dp"
+                android:textColorHint="@color/tiertiry"
+                app:hintTextColor="#BB86FC"
+                app:boxBackgroundColor="#1AFFFFFF"
+                app:boxStrokeColor="#BB86FC"
+                app:boxStrokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/etHabitCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/tiertiry"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Priority"
+                android:layout_marginHorizontal="4dp"
+                android:textColorHint="@color/tiertiry"
+                app:hintTextColor="#BB86FC"
+                app:boxBackgroundColor="#1AFFFFFF"
+                app:boxStrokeColor="#BB86FC"
+                app:boxStrokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/etHabitPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/tiertiry"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:baselineAligned="false">
+
+            <CheckBox
+                android:id="@+id/cbHasAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actionable"
+                android:textColor="@color/Secondary"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilActionValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="Target Value"
+                android:visibility="gone"
+                android:textColorHint="@color/tiertiry"
+                app:hintTextColor="#BB86FC"
+                app:boxBackgroundColor="#1AFFFFFF"
+                app:boxStrokeColor="#BB86FC"
+                app:boxStrokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etactionvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/tiertiry"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHabitMetric"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:hint="Metric Unit"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"
+                android:textColorHint="@color/tiertiry"
+                app:hintTextColor="#BB86FC"
+                app:boxBackgroundColor="#1AFFFFFF"
+                app:boxStrokeColor="#BB86FC"
+                app:boxStrokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/actvHabitMetric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/tiertiry"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notes / Descriptive Reminders"
+            android:layout_marginBottom="20dp"
+            android:textColorHint="@color/tiertiry"
+            app:hintTextColor="#BB86FC"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#BB86FC"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHabitNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tiertiry"
+                android:inputType="textLongMessage|textMultiLine"
+                android:minLines="2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Date"
+            android:layout_marginBottom="12dp"
+            android:textColorHint="@color/tiertiry"
+            app:hintTextColor="#BB86FC"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#BB86FC"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHabitStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="@color/tiertiry"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilHabitEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Target Deadline"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:hintTextColor="#BB86FC"
+            app:boxBackgroundColor="#1AFFFFFF"
+            app:boxStrokeColor="#BB86FC"
+            app:boxStrokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHabitEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="@color/tiertiry"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:baselineAligned="false">
+
+            <CheckBox
+                android:id="@+id/cbHasEndDate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Enforce End Date"
+                android:textColor="@color/Secondary"
+                android:checked="false"/>
+
+            <CheckBox
+                android:id="@+id/cbLinkWithGoal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Link With Goal"
+                android:textColor="@color/Secondary"
+                android:checked="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLinkGoalContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Link To Parent Goal"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp"/>
+            <Spinner
+                android:id="@+id/spLinkGoal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#1AFFFFFF"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recurrence"
+            android:textColor="@color/Secondary"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spFrequencyType"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#1AFFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/llContainerIntervals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Every "
+                android:textColor="@color/tiertiry"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/etIntervalDays"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/tiertiry"
+                android:hint="3"
+                android:textColorHint="@color/text_secondary"
+                android:textAlignment="center"
+                android:backgroundTint="@color/tiertiry"/>
+            <Spinner
+                android:id="@+id/spIntervalUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llContainerPeriodic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/etPeriodicCount"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/tiertiry"
+                android:hint="4"
+                android:textColorHint="@color/text_secondary"
+                android:textAlignment="center"
+                android:backgroundTint="@color/tiertiry"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Days Per "
+                android:textColor="@color/tiertiry"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <Spinner
+                android:id="@+id/spPeriodicTimeframe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llContainerSpecificDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSelectSpecificDates"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Multiple Target Dates"
+                android:textColor="#03DAC5"
+                app:strokeColor="#03DAC5"
+                android:layout_marginBottom="8dp"/>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgSpecificDates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true"/>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveHabitTracker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Habit"
+            app:backgroundTint="#BB86FC"
+            android:paddingVertical="12dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
